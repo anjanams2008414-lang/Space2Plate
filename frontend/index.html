@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space2Plate | AI-Powered Space Food Security System</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=nutrition-monitor-2">
+</head>
+<body class="login-required">
+
+<section class="login-screen" id="loginScreen" aria-labelledby="loginTitle">
+  <div class="login-stars" aria-hidden="true"></div>
+  <div class="login-orbit login-orbit-one" aria-hidden="true"></div>
+  <div class="login-orbit login-orbit-two" aria-hidden="true"></div>
+  <div class="login-card">
+    <div class="login-brand">
+      <span class="login-brand-icon" aria-hidden="true">🚀</span>
+      <span>SPACE2PLATE <span class="login-brand-divider">/</span> MISSION ACCESS</span>
+    </div>
+
+    <div class="login-astronaut-stage" aria-hidden="true">
+      <span class="login-planet"></span>
+      <span class="login-planet-small"></span>
+      <svg class="login-astronaut" viewBox="0 0 240 260" role="img" aria-label="A waving astronaut">
+        <defs>
+          <linearGradient id="suitGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f8fdff"/>
+            <stop offset="1" stop-color="#a9c9e8"/>
+          </linearGradient>
+          <linearGradient id="visorGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#173d68"/>
+            <stop offset="0.55" stop-color="#101b3d"/>
+            <stop offset="1" stop-color="#6047a3"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="120" cy="244" rx="65" ry="9" fill="#00e5ff" opacity=".2"/>
+        <path d="M76 152c-20 4-30 18-35 43l-7 34c-2 10 10 15 16 6l20-31 16-27" fill="url(#suitGradient)" stroke="#6ea9d1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="astronaut-wave">
+          <path d="M160 155c20 2 28-11 32-30l8-29c2-9 14-8 15 1l2 21c8-10 16-3 12 6l-11 30c-7 20-22 28-45 24" fill="url(#suitGradient)" stroke="#6ea9d1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M200 93l1-13c1-8 12-8 14 0l2 21" fill="url(#suitGradient)" stroke="#6ea9d1" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <path d="M76 157c8-11 20-17 44-17s39 8 46 22l17 55H58z" fill="url(#suitGradient)" stroke="#6ea9d1" stroke-width="5" stroke-linejoin="round"/>
+        <rect x="96" y="164" width="49" height="42" rx="10" fill="#102545" stroke="#00d9f5" stroke-width="4"/>
+        <circle cx="120" cy="185" r="8" fill="#10b981"/>
+        <path d="M88 152c-8-6-13-16-13-29V84c0-27 20-46 45-46s45 19 45 46v39c0 12-5 22-13 29l-12 9H99z" fill="url(#suitGradient)" stroke="#6ea9d1" stroke-width="5"/>
+        <path d="M83 94c0-25 16-41 37-41s37 16 37 41v13c0 23-16 37-37 37s-37-14-37-37z" fill="url(#visorGradient)" stroke="#e8f8ff" stroke-width="5"/>
+        <path d="M95 77c7-8 16-12 27-12" fill="none" stroke="#a9f5ff" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+        <rect x="66" y="105" width="11" height="27" rx="5" fill="#00d9f5"/>
+        <rect x="163" y="105" width="11" height="27" rx="5" fill="#00d9f5"/>
+      </svg>
+      <span class="login-spark login-spark-one">✦</span>
+      <span class="login-spark login-spark-two">✧</span>
+      <span class="login-spark login-spark-three">✦</span>
+      <div class="astronaut-speech">Welcome to<br><strong>Space2Plate!</strong></div>
+    </div>
+
+    <div class="login-copy">
+      <p class="login-eyebrow">ARTEMIS BIO-HAB · CREW PORTAL</p>
+      <h1 id="loginTitle">Welcome to <span>Space2Plate</span></h1>
+      <p class="login-message">Your mission control for growing fresh food among the stars.</p>
+    </div>
+
+    <form class="login-form" id="loginForm">
+      <label for="crewName">Astronaut name</label>
+      <input id="crewName" name="crewName" type="text" placeholder="e.g. Cmdr. Alex Vance" autocomplete="name" maxlength="60" required>
+      <button class="login-submit" type="submit">
+        <span>Enter Mission Control</span><span aria-hidden="true">→</span>
+      </button>
+      <p class="login-demo-note">DEMO ACCESS <span>·</span> No password required</p>
+    </form>
+  </div>
+</section>
+
+<div class="login-launch-rocket" id="loginLaunchRocket" aria-hidden="true">🚀</div>
+
+<div class="app-container" aria-hidden="true">
+
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="sidebar">
+    <div class="brand-section">
+      <div class="brand-icon">🚀</div>
+      <div>
+        <div class="brand-title">Space2Plate</div>
+        <div class="brand-subtitle">Bio-Food Security AI</div>
+      </div>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a class="nav-link active" data-page="dashboard">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="greenhouse">
+          <span class="nav-icon">🪴</span> Orbital Greenhouse
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="plants">
+          <span class="nav-icon">🌱</span> Plant Monitoring
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="ai-analysis">
+          <span class="nav-icon">🤖</span> AI Image Analysis
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="prediction">
+          <span class="nav-icon">📈</span> Growth Prediction
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="resources">
+          <span class="nav-icon">💧</span> Resource Optimization
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="harvest">
+          <span class="nav-icon">🌾</span> Harvest & Food
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="astronaut">
+          <span class="nav-icon">👨‍🚀</span> Astronaut Profile
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="nutrition">
+          <span class="nav-icon">🥗</span> Health & Nutrition
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="emergency">
+          <span class="nav-icon">🚨</span> Emergency Mode
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-page="settings">
+          <span class="nav-icon">⚙️</span> Settings & Sensors
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="mission-indicator">
+        <div class="pulse-dot"></div>
+        <div>
+          <div id="sidebarMissionName" style="font-weight: 600; color: #fff;">Artemis Bio-Hab</div>
+          <div id="sidebarMissionStatus">Sol 142 • Status: Nominal</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT -->
+  <div class="main-wrapper">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-toggle" id="mobileMenuToggle">☰</button>
+        <div class="telemetry-ticker">
+          <div class="telemetry-item">🌡️ <span id="telTemp">22.4°C</span></div>
+          <div class="telemetry-item">💧 <span id="telHum">64.8%</span></div>
+          <div class="telemetry-item">💨 <span id="telCo2">950 ppm</span></div>
+          <div class="telemetry-item">🧪 <span id="telWater">78.4% Tank</span></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div style="font-size: 0.8rem; text-align: right;">
+          <div id="crewNameDisplay" style="color: #fff; font-weight: 600;">Cmdr. Alex Vance</div>
+          <div style="color: var(--text-muted); font-size: 0.7rem;">Crew Lead (4 Person)</div>
+        </div>
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #00e5ff, #10b981); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #070a13;">
+          AV
+        </div>
+      </div>
+    </header>
+
+    <!-- HACKATHON DEMO CONTROLS BANNER -->
+    <div class="demo-banner">
+      <div class="demo-title">
+        <span>🎬 <strong>Hackathon Demo Pitch:</strong></span>
+        <span style="font-size: 0.78rem; color: var(--text-muted);">Simulate live 3-minute space agricultural scenarios</span>
+      </div>
+      <div class="demo-actions">
+        <button class="btn-demo btn-demo-scenario1" id="btnDemo1">
+          ✓ Scenario 1: Normal Mission
+        </button>
+        <button class="btn-demo btn-demo-scenario2" id="btnDemo2">
+          ⚠️ Scenario 2: Plant Stress
+        </button>
+        <button class="btn-demo btn-demo-scenario3" id="btnDemo3">
+          🚨 Scenario 3: Emergency Mode
+        </button>
+        <button class="btn-demo btn-demo-reset" id="btnDemoReset">
+          🔄 Reset State
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT VIEWS -->
+    <main class="content-area">
+
+      <!-- ============================================== -->
+      <!-- PAGE 1: DASHBOARD -->
+      <!-- ============================================== -->
+      <section class="page-view active" id="page-dashboard">
+        <div id="topEmergencyAlert" style="display: none;" class="emergency-banner-alert">
+          <div>
+            <strong style="color: var(--red-alert); font-size: 1rem;">🚨 MISSION CRITICAL ALERT: Emergency Food Rationing Active</strong>
+            <p style="font-size: 0.85rem; margin-top: 4px;">Hydroponic valve failure detected. Remaining food buffer recalculated to 18 days.</p>
+          </div>
+          <button class="btn-primary" onclick="App.switchPage('emergency')">View Emergency Protocols</button>
+        </div>
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title" tabindex="-1">🚀 Mission Control</h1>
+            <p class="page-subtitle">A living overview of your crew, crops, and food reserves.</p>
+          </div>
+        </div>
+
+        <section class="mission-hero" id="missionHero" aria-labelledby="missionHeroTitle">
+          <div class="mission-hero-copy">
+            <div class="mission-kicker"><span class="mission-live-dot"></span> ARTEMIS BIO-HAB · SOL <span id="heroSol">142</span></div>
+            <h2 id="missionHeroTitle">Welcome aboard, <span id="heroCrewName">Commander</span></h2>
+            <p id="heroSummary">Your bio-regenerative food systems are being checked now.</p>
+            <div class="mission-hero-actions">
+              <button class="btn-primary" type="button" onclick="App.switchPage('plants')">View crop health <span aria-hidden="true">→</span></button>
+              <button class="mission-text-action" type="button" onclick="App.switchPage('harvest')">Open harvest plan</button>
+            </div>
+          </div>
+          <div class="mission-hero-status">
+            <span class="mission-status-label">MISSION STATUS</span>
+            <strong id="heroStatus" class="mission-status-value">CHECKING</strong>
+            <div class="mission-hero-divider"></div>
+            <div class="mission-hero-metrics">
+              <div><span>Food reserve</span><strong id="heroFoodDays">-- sols</strong></div>
+              <div><span>Next harvest</span><strong id="heroNextHarvest">Checking crops</strong></div>
+            </div>
+          </div>
+          <div class="mission-hero-orbit" aria-hidden="true"><span></span></div>
+        </section>
+
+        <!-- 10 Primary Metric Cards -->
+        <div class="stats-grid">
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Total Plants</span>
+              <span class="stat-icon">🌱</span>
+            </div>
+            <div class="stat-value" id="statTotalPlants">5</div>
+            <div class="stat-meta">5 Cultivation Chambers Active</div>
+          </div>
+
+          <div class="glass-card stat-card success">
+            <div class="stat-header">
+              <span class="stat-title">Healthy Plants</span>
+              <span class="stat-icon">✅</span>
+            </div>
+            <div class="stat-value" id="statHealthyPlants" style="color: var(--green-bio);">4</div>
+            <div class="stat-meta">Biomass Index > 80%</div>
+          </div>
+
+          <div class="glass-card stat-card risk">
+            <div class="stat-header">
+              <span class="stat-title">Plants At Risk</span>
+              <span class="stat-icon">⚠️</span>
+            </div>
+            <div class="stat-value" id="statPlantsAtRisk" style="color: var(--amber-warn);">1</div>
+            <div class="stat-meta">Requires Resource Attention</div>
+          </div>
+
+          <div class="glass-card stat-card alert">
+            <div class="stat-header">
+              <span class="stat-title">Crop Failure Risk</span>
+              <span class="stat-icon">📉</span>
+            </div>
+            <div class="stat-value" id="statMaxRisk" style="color: var(--red-alert);">42%</div>
+            <div class="stat-meta">Peak Risk (Tomato-03)</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Expected Harvest</span>
+              <span class="stat-icon">📅</span>
+            </div>
+            <div class="stat-value" id="statExpectedHarvest" style="font-size: 1.25rem;">Spinach-04 (Oct 08)</div>
+            <div class="stat-meta">Immediate Harvest Window</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Water Usage</span>
+              <span class="stat-icon">💧</span>
+            </div>
+            <div class="stat-value" id="statWaterUsage">1,910 ml/day</div>
+            <div class="stat-meta" id="statWaterSavings" style="color: var(--cyan-neon);">-162 ml (8.5% Saved)</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Nutrient Status</span>
+              <span class="stat-icon">🧪</span>
+            </div>
+            <div class="stat-value" id="statNutrientStatus" style="font-size: 1.25rem;">NOMINAL (84.2%)</div>
+            <div class="stat-meta">Hoagland Closed-Loop EC</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Food Stock</span>
+              <span class="stat-icon">🥗</span>
+            </div>
+            <div class="stat-value" id="statFoodStock">21.8 kg (65 sols)</div>
+            <div class="stat-meta">4 Astronauts Sustained</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Mission Remaining</span>
+              <span class="stat-icon">⏳</span>
+            </div>
+            <div class="stat-value" id="statMissionDays">238 Days</div>
+            <div class="stat-meta">Artemis Bio-Hab Sol 142</div>
+          </div>
+        </div>
+
+        <!-- Middle Row: AI Insights & Telemetry Chart -->
+        <div class="dashboard-grid-2">
+          <div class="glass-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h3 style="font-size: 1.1rem; font-weight: 700;">🤖 Space2Plate AI Insights</h3>
+              <span class="plant-badge badge-healthy">Active Reasoning Engine</span>
+            </div>
+            <div class="insights-list" id="aiInsightsList">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 14px;">🌱 Crop Health Distribution</h3>
+            <div style="height: 220px; position: relative;">
+              <canvas id="chartHealthDist"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Environmental Chamber Gauges -->
+        <div class="glass-card" style="margin-bottom: 24px;">
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px;">🌡️ Simulated Real-Time Microclimate Telemetry</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 18px;">
+            <div>
+              <div class="progress-header">
+                <span>Temperature (Safe: 19-26°C)</span>
+                <strong id="gaugeTemp">22.4°C</strong>
+              </div>
+              <div class="custom-progress">
+                <div class="progress-fill fill-amber" id="progTemp" style="width: 64%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="progress-header">
+                <span>Relative Humidity (55-75%)</span>
+                <strong id="gaugeHum">64.8%</strong>
+              </div>
+              <div class="custom-progress">
+                <div class="progress-fill fill-cyan" id="progHum" style="width: 65%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="progress-header">
+                <span>CO2 Level (700-1200 ppm)</span>
+                <strong id="gaugeCo2">950 ppm</strong>
+              </div>
+              <div class="custom-progress">
+                <div class="progress-fill fill-green" id="progCo2" style="width: 63%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="progress-header">
+                <span>PPFD Light (250-450 µmol)</span>
+                <strong id="gaugeLight">360 µmol</strong>
+              </div>
+              <div class="custom-progress">
+                <div class="progress-fill fill-cyan" id="progLight" style="width: 72%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="progress-header">
+                <span>Water Reservoir Tank</span>
+                <strong id="gaugeWater">78.4%</strong>
+              </div>
+              <div class="custom-progress">
+                <div class="progress-fill fill-cyan" id="progWater" style="width: 78%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="progress-header">
+                <span>Nutrient Salt Level</span>
+                <strong id="gaugeNutr">84.2%</strong>
+              </div>
+              <div class="custom-progress">
+                <div class="progress-fill fill-green" id="progNutr" style="width: 84%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mission activity -->
+        <div class="glass-card mission-timeline-card">
+          <div class="mission-timeline-heading">
+            <div>
+              <span class="mission-kicker">LIVE MISSION LOG</span>
+              <h3>Mission activity</h3>
+            </div>
+            <span class="timeline-live-badge"><span></span> RECENT EVENTS</span>
+          </div>
+          <div class="mission-timeline" id="recentAlertsList" aria-live="polite">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 2: ORBITAL GREENHOUSE DIGITAL TWIN -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-greenhouse">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">🪴 Orbital Greenhouse</h1>
+            <p class="page-subtitle">Explore the living digital twin of the Artemis Bio-Hab growing systems.</p>
+          </div>
+        </div>
+        <section class="digital-twin glass-card" aria-labelledby="digitalTwinTitle">
+          <div class="digital-twin-heading">
+            <div>
+              <span class="mission-kicker"><span class="mission-live-dot"></span> LIVE HABITAT MODEL</span>
+              <h2 id="digitalTwinTitle">Artemis Bio-Hab · Module A</h2>
+              <p>Orbital greenhouse digital twin · Hydroponic growth systems</p>
+            </div>
+            <span class="twin-sync-badge">● TELEMETRY SYNCED</span>
+          </div>
+
+          <div class="digital-twin-layout">
+            <div class="greenhouse-scene" aria-label="Illustrated vertical hydroponic greenhouse">
+              <div class="scene-ambient-glow"></div>
+              <div class="scene-ceiling">
+                <span>VERTICAL GROW BAY 01</span>
+                <div class="grow-light-bar"><i></i><i></i><i></i><i></i><i></i></div>
+                <span class="grow-light-label">FULL-SPECTRUM LED ARRAY</span>
+              </div>
+              <div class="scene-airflow airflow-one"><span>CO₂</span><i></i><i></i><i></i></div>
+              <div class="scene-airflow airflow-two"><span>AIR RETURN</span><i></i><i></i><i></i></div>
+              <div class="grow-rack">
+                <div class="rack-upright rack-upright-left"></div>
+                <div class="rack-upright rack-upright-right"></div>
+                <div class="rack-shelf shelf-top"></div>
+                <div class="rack-shelf shelf-middle"></div>
+                <div class="rack-shelf shelf-bottom"></div>
+                <div class="plant-rack-list" id="digitalTwinPlants" aria-live="polite">
+                  <div class="twin-loading">Syncing crop telemetry…</div>
+                </div>
+                <div class="nutrient-pipe"><span class="pipe-flow"></span></div>
+              </div>
+              <div class="scene-reservoir">
+                <div class="reservoir-cap"></div>
+                <div class="reservoir-water"></div>
+                <span>HYDROPONIC LOOP</span>
+              </div>
+              <div class="scene-callout callout-led"><b>01</b><span>Photon array<br><strong id="twinLightLabel">-- μmol/m²/s</strong></span></div>
+              <div class="scene-callout callout-co2"><b>02</b><span>Atmosphere<br><strong id="twinCo2Label">-- ppm CO₂</strong></span></div>
+              <div class="scene-floor"></div>
+            </div>
+
+            <aside class="twin-control-panel" aria-label="Live greenhouse systems">
+              <div class="twin-panel-heading">
+                <div><span class="mission-kicker">ENVIRONMENTAL TELEMETRY</span><h3>Habitat conditions</h3></div>
+                <span class="telemetry-live"><i></i> LIVE</span>
+              </div>
+              <div class="twin-sensor-grid">
+                <div class="twin-sensor"><span>🌡</span><div><small>Temperature</small><strong id="twinTemperature">-- °C</strong><em>Target 19–26 °C</em></div></div>
+                <div class="twin-sensor"><span>◌</span><div><small>Humidity</small><strong id="twinHumidity">-- %</strong><em>Target 55–75 %</em></div></div>
+                <div class="twin-sensor"><span>☼</span><div><small>Grow light</small><strong id="twinLight">-- μmol</strong><em>Photosynthetic flux</em></div></div>
+                <div class="twin-sensor"><span>◉</span><div><small>CO₂ level</small><strong id="twinCo2">-- ppm</strong><em>Atmosphere control</em></div></div>
+                <div class="twin-sensor"><span>💧</span><div><small>Water tank</small><strong id="twinWater">-- %</strong><em>Closed-loop reserve</em></div></div>
+                <div class="twin-sensor"><span>✣</span><div><small>Nutrient solution</small><strong id="twinNutrients">-- %</strong><em>Reservoir concentration</em></div></div>
+              </div>
+
+              <div class="twin-resource-section">
+                <div class="twin-panel-heading"><div><span class="mission-kicker">RESOURCE FLOW</span><h3>Daily system load</h3></div></div>
+                <div class="resource-row">
+                  <span>Water delivery</span><strong id="twinWaterUse">-- ml/day</strong>
+                  <div class="resource-track"><i id="twinWaterBar"></i></div>
+                </div>
+                <div class="resource-row">
+                  <span>LED energy <small>MODELED</small></span><strong id="twinEnergyUse">-- kWh/sol</strong>
+                  <div class="resource-track energy"><i id="twinEnergyBar"></i></div>
+                </div>
+                <div class="resource-row">
+                  <span>Nutrient reserve</span><strong id="twinNutrientUse">-- %</strong>
+                  <div class="resource-track nutrients"><i id="twinNutrientBar"></i></div>
+                </div>
+                <p class="energy-disclaimer">Energy draw is a prototype estimate for the LED array.</p>
+              </div>
+
+              <div class="twin-prediction-card">
+                <div class="prediction-orbit-icon">✦</div>
+                <div><span class="mission-kicker">AI CROP FORECAST</span><strong id="twinPredictionTitle">Analyzing growth</strong><p id="twinPredictionText">Harvest projection and plant health will appear when crop telemetry syncs.</p></div>
+              </div>
+            </aside>
+          </div>
+          <div class="twin-ai-recommendation" id="twinRecommendation">
+            <span class="recommendation-spark">✦</span>
+            <div><span class="mission-kicker">SPACE2PLATE AI RECOMMENDATION</span><p id="twinRecommendationText">Analyzing habitat conditions for resource and crop-care recommendations.</p></div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 3: PLANT MONITORING -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-plants">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">🌱 Bio-Chamber Plant Monitoring</h1>
+            <p class="page-subtitle">Inspect telemetry, hydration, health scores, and failure risks for all active space cultivars</p>
+          </div>
+        </div>
+
+        <div class="plants-grid" id="plantsGrid">
+          <!-- Dynamically populated with Lettuce, Tomato, Radish, Peas, Spinach -->
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 3: AI PLANT IMAGE ANALYSIS -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-ai-analysis">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">🤖 AI Plant Optical Diagnostics</h1>
+            <p class="page-subtitle">Upload leaf or canopy imagery for automated spectral chlorophyll, chlorosis, and pathology evaluation</p>
+          </div>
+        </div>
+
+        <div class="dashboard-grid-2">
+          <div>
+            <div class="glass-card">
+              <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Image Upload & Camera Feed</h3>
+              
+              <div class="upload-dropzone" id="uploadDropzone">
+                <div class="upload-icon">📷</div>
+                <h4 style="font-weight: 600; margin-bottom: 4px;">Click to Browse or Drag Plant Leaf Photo</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Supports PNG, JPG, WEBP. Processed locally via Pillow / Colorimetric Engine.</p>
+                <input type="file" id="plantFileInput" accept="image/*" style="display: none;">
+              </div>
+
+              <div style="margin-top: 18px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">1-Click Pre-loaded Space Specimens (Instant Hackathon Demo):</span>
+                <div class="sample-chips">
+                  <button class="chip-btn preset-btn" data-preset="sample-lettuce-healthy">🥗 Healthy Lettuce (LET-01)</button>
+                  <button class="chip-btn preset-btn" data-preset="sample-tomato-stressed">🍅 Water-Stressed Tomato (TOM-03)</button>
+                  <button class="chip-btn preset-btn" data-preset="sample-spinach-mature">🥬 Mature Spinach (SPI-04)</button>
+                  <button class="chip-btn preset-btn" data-preset="sample-peas-nitrogen-low">🌱 Low-Nitrogen Peas (PEA-01)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="glass-card">
+              <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;">Methodology & Diagnostics Scope</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                Space2Plate evaluates optical imagery using an <strong>Excess Green Index (ExG)</strong> vegetation model coupled with spectral chlorosis and brown necrosis detection.
+              </p>
+              <ul style="font-size: 0.82rem; color: var(--text-muted); padding-left: 18px; line-height: 1.6;">
+                <li><strong>Chlorosis:</strong> Detects chlorophyll loss from nutrient deficiency or water stress.</li>
+                <li><strong>Necrosis:</strong> Flags cellular death or foliar disease before canopy loss occurs.</li>
+                <li><strong>Prescriptive Output:</strong> Formulates micro-dosing and environmental adjustments.</li>
+              </ul>
+              <div style="background: rgba(0, 229, 255, 0.05); padding: 10px; border-radius: 8px; margin-top: 16px; font-size: 0.75rem; color: var(--cyan-neon);">
+                ℹ️ Prototype optical index simulation for hackathon demonstration. Not scientifically certified flight hardware.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="analysisResultContainer">
+          <!-- Dynamically populated after upload or preset click -->
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 4: GROWTH PREDICTION & FAILURE ALERTS -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-prediction">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">📈 Predictive Crop Analytics & Failure Warning</h1>
+            <p class="page-subtitle">Multi-factor growth velocity trajectories and early crop failure risk mitigation</p>
+          </div>
+        </div>
+
+        <div class="dashboard-grid-2">
+          <div>
+            <div class="glass-card" style="margin-bottom: 20px;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Active Crop Risk Matrix</h3>
+              <div id="predictionCropsList">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="glass-card">
+              <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Growth Velocity Trajectory (Sigmoidal Projection)</h3>
+              <div style="height: 320px; position: relative;">
+                <canvas id="chartGrowthPrediction"></canvas>
+              </div>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; font-style: italic;">
+                * Solid line represents telemetric historical sensor readings; dashed line displays predicted growth trajectory based on current health score and hydration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 5: RESOURCE OPTIMIZATION -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-resources">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">💧 Closed-Loop Resource Optimization</h1>
+            <p class="page-subtitle">Algorithmic calibration of water misting, nutrient solution, and lighting photoperiods</p>
+          </div>
+        </div>
+
+        <div class="stats-grid" style="margin-bottom: 20px;">
+          <div class="glass-card stat-card">
+            <div class="stat-title">Baseline Water Usage</div>
+            <div class="stat-value" id="resTotalWaterCurrent">1,910 ml</div>
+            <div class="stat-meta">Unoptimized Open Flow</div>
+          </div>
+
+          <div class="glass-card stat-card success">
+            <div class="stat-title">AI-Optimized Water</div>
+            <div class="stat-value" id="resTotalWaterOpt" style="color: var(--cyan-neon);">1,748 ml</div>
+            <div class="stat-meta">Vapor Condenser Closed-Loop</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-title">Net Water Savings</div>
+            <div class="stat-value" id="resWaterSaved" style="color: var(--green-bio);">162 ml (8.5%)</div>
+            <div class="stat-meta">Conserved for Crew Life Support</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-title">Nutrient EC Saved</div>
+            <div class="stat-value" id="resNutrientsSaved" style="color: var(--purple-neon);">38 ppm</div>
+            <div class="stat-meta">Prevents Salt Toxicity</div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid-2">
+          <div class="glass-card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Water Consumption Comparison (ml/day)</h3>
+            <div style="height: 280px; position: relative;">
+              <canvas id="chartResourceSaving"></canvas>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Resource Action Directives</h3>
+            <div style="overflow-x: auto;">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Plant</th>
+                    <th>Current</th>
+                    <th>Optimized</th>
+                    <th>Saved</th>
+                    <th>Light</th>
+                    <th>Priority</th>
+                  </tr>
+                </thead>
+                <tbody id="resourceTableBody">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 6: HARVEST READINESS & FOOD SUITABILITY -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-harvest">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">🌾 Harvest Readiness & Space Food Suitability</h1>
+            <p class="page-subtitle">Evaluate zero-crumb risks, nutritional density, and harvest mature crops into food storage</p>
+          </div>
+        </div>
+
+        <div class="plants-grid" id="harvestCropsGrid" style="margin-bottom: 24px;">
+          <!-- Dynamically populated with Harvest Cards -->
+        </div>
+
+        <div class="dashboard-grid-2">
+          <div class="glass-card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Space Food Suitability Radar Matrix</h3>
+            <div style="height: 260px; position: relative;">
+              <canvas id="chartFoodRadar"></canvas>
+            </div>
+            <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 8px;">
+              * High floating-crumb particles pose catastrophic hazards in microgravity by entering ventilation filters and crew airways. Space2Plate scores food friability accordingly.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Mission Food Supply Inventory</h3>
+            <div style="overflow-x: auto;">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Nutrition</th>
+                    <th>Shelf Life</th>
+                    <th>Storage</th>
+                    <th>Crumb Risk</th>
+                    <th>Suitability</th>
+                  </tr>
+                </thead>
+                <tbody id="foodInventoryTableBody">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 7: ASTRONAUT PROFILE & RECOMMENDATIONS -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-astronaut">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">👨‍🚀 Astronaut Profile & Tailored Nutrition</h1>
+            <p class="page-subtitle">Personalized dietary engine matching biometric priorities, sensory preferences, and active harvests</p>
+          </div>
+        </div>
+
+        <div class="dashboard-grid-2">
+          <!-- Profile Configuration Form -->
+          <div class="glass-card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px;">Biometric Profile Settings</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <label class="form-label">Astronaut Name</label>
+                <input type="text" class="form-input" id="astroName">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Role</label>
+                <input type="text" class="form-input" id="astroRole">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <label class="form-label">Age</label>
+                <input type="number" class="form-input" id="astroAge">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mission Sols</label>
+                <input type="number" class="form-input" id="astroMissionDays">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Sensory & Texture Preferences</label>
+              <input type="text" class="form-input" id="astroPreferences">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Dietary Requirements</label>
+              <input type="text" class="form-input" id="astroDietary">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Nutritional Priorities</label>
+              <textarea class="form-textarea" rows="2" id="astroPriorities"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Foods to Avoid</label>
+              <input type="text" class="form-input" id="astroAvoid">
+            </div>
+
+            <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="Dashboard.saveAstronautProfile()">
+              💾 Update Profile & Recalculate Menu
+            </button>
+          </div>
+
+          <!-- Dynamic Meal Recommendation -->
+          <div id="mealRecommendationCard">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 8: ASTRONAUT HEALTH & NUTRITION -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-nutrition">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">🥗 Astronaut Health & Nutrition Monitoring</h1>
+            <p class="page-subtitle">Daily nutrient coverage from stored provisions and harvest-ready space-grown foods.</p>
+          </div>
+          <button class="btn-primary" type="button" onclick="Dashboard.renderNutritionView()">↻ Recalculate</button>
+        </div>
+
+        <div class="nutrition-overview-grid">
+          <div class="glass-card nutrition-score-card">
+            <span class="mission-kicker">DAILY NUTRITION SCORE</span>
+            <div class="nutrition-score-value"><strong id="nutritionOverallScore">--</strong><span>/ 100</span></div>
+            <p id="nutritionScoreSummary">Calculating daily nutrient coverage…</p>
+          </div>
+          <div class="glass-card nutrition-preference-card">
+            <span class="mission-kicker">CREW FOOD PROFILE</span>
+            <h2 id="nutritionCrewName">Astronaut</h2>
+            <p><strong>Preferences:</strong> <span id="nutritionPreferences">Loading…</span></p>
+            <p><strong>Avoiding:</strong> <span id="nutritionAvoid">Loading…</span></p>
+            <p class="nutrition-source-note">Menu suggestions use saved profile preferences and dietary requirements.</p>
+            <button class="mission-text-action" type="button" onclick="App.switchPage('astronaut')">Edit food profile →</button>
+          </div>
+        </div>
+
+        <section class="glass-card nutrition-panel">
+          <div class="nutrition-section-heading">
+            <div><span class="mission-kicker">REFERENCE INTAKE · PER DAY</span><h2>Nutrition requirement coverage</h2></div>
+            <span class="plant-badge badge-healthy">ESTIMATED</span>
+          </div>
+          <div class="nutrition-progress-list" id="nutritionProgressList" aria-live="polite">
+            <p class="nutrition-empty">Loading nutrition analysis…</p>
+          </div>
+        </section>
+
+        <div class="nutrition-content-grid">
+          <section class="glass-card nutrition-panel">
+            <div class="nutrition-section-heading">
+              <div><span class="mission-kicker">PREFERENCE-AWARE MENU</span><h2>Suggested daily food combination</h2></div>
+            </div>
+            <div id="nutritionMenu" aria-live="polite"><p class="nutrition-empty">Building a menu from available foods…</p></div>
+          </section>
+          <section class="glass-card nutrition-panel">
+            <div class="nutrition-section-heading">
+              <div><span class="mission-kicker">STORES + READY HARVESTS</span><h2>Available food sources</h2></div>
+            </div>
+            <div id="nutritionFoodSources" aria-live="polite"><p class="nutrition-empty">Checking food availability…</p></div>
+          </section>
+        </div>
+        <p class="nutrition-disclaimer" id="nutritionDisclaimer"></p>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 9: EMERGENCY MISSION MODE -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-emergency">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title" style="color: var(--red-alert);">🚨 Emergency Mission Mode</h1>
+            <p class="page-subtitle">Autonomous life support contingency, accelerated early harvest, and resource rationing</p>
+          </div>
+        </div>
+
+        <div id="emergencyStatusPanel">
+          <!-- Dynamically populated with status, actions checklist, and toggle -->
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PAGE 9: SETTINGS & SENSORS -->
+      <!-- ============================================== -->
+      <section class="page-view" id="page-settings">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">⚙️ Station Hardware & Sensor Configurations</h1>
+            <p class="page-subtitle">Simulated IoT telemetry rates, camera sensitivities, and local database management</p>
+          </div>
+        </div>
+
+        <div class="dashboard-grid-2">
+          <div class="glass-card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 14px;">Telemetry Stream Config</h3>
+            <div class="form-group">
+              <label class="form-label">Sensor Polling Frequency</label>
+              <select class="form-select">
+                <option>High Frequency (2.5 seconds - Active WebSocket)</option>
+                <option>Standard (10 seconds)</option>
+                <option>Conservation (60 seconds)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Optical Spectral Camera Exposure</label>
+              <select class="form-select">
+                <option>Auto (LED High-Fluorescence)</option>
+                <option>Infrared NDVI Filter</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Closed-Loop Aeroponic Valve Model</label>
+              <input type="text" class="form-input" value="Artemis Micro-Mister V3.4 (PWM Ultrasonic)" readonly>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 14px;">Local Hackathon Database Controls</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+              Space2Plate persists state in SQLite (<code>space2plate.db</code>). Reset anytime to return to baseline demo values.
+            </p>
+            <button class="btn-primary" style="margin-bottom: 12px; width: 100%; justify-content: center;" onclick="App.runDemoStep(0)">
+              🔄 Reset Database to Pristine Sol 142 State
+            </button>
+            <button class="btn-outline-danger" style="width: 100%; justify-content: center;" onclick="App.runDemoStep(3)">
+              🚨 Test Mission Catastrophe Drill
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<aside class="crew-astronaut" aria-label="Astronaut companion">
+  <div class="crew-astronaut-greeting">
+    <button class="crew-astronaut-dismiss" id="dismissCrewAstronaut" type="button" aria-label="Hide astronaut companion">×</button>
+    <strong id="crewTipTitle">Hi, crew!</strong><br><span id="crewTipMessage">Ready to grow among the stars?</span>
+  </div>
+  <svg class="crew-astronaut-figure" viewBox="0 0 120 140" aria-hidden="true">
+    <ellipse cx="60" cy="132" rx="33" ry="5" fill="#00e5ff" opacity=".22"/>
+    <g class="crew-astronaut-wave">
+      <path d="M83 75c14-4 15-17 18-27l4-14c2-7 10-5 10 1l-1 14c8-7 13-1 9 5L112 72c-6 12-17 16-31 12" fill="#dcecff" stroke="#70b9e1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M103 35l2-9c2-6 9-4 9 1l-1 10" fill="#dcecff" stroke="#70b9e1" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <path d="M31 81c2-12 13-19 29-19s27 7 29 19l8 43H23z" fill="#dcecff" stroke="#70b9e1" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="48" y="84" width="25" height="25" rx="6" fill="#112647" stroke="#00dff5" stroke-width="2"/>
+    <circle cx="60.5" cy="96.5" r="4" fill="#10b981"/>
+    <path d="M34 48c0-18 11-29 26-29s26 11 26 29v14c0 15-11 24-26 24S34 77 34 62z" fill="#dcecff" stroke="#70b9e1" stroke-width="3"/>
+    <path d="M39 49c0-14 8-23 21-23s21 9 21 23v7c0 14-9 21-21 21S39 70 39 56z" fill="#17264f" stroke="#f2fbff" stroke-width="3"/>
+    <path class="crew-visor-glint" d="M47 39c4-5 9-7 15-7" fill="none" stroke="#a8f5ff" stroke-width="3" stroke-linecap="round"/>
+    <rect x="26" y="53" width="7" height="15" rx="3" fill="#00d9f5"/>
+    <rect x="87" y="53" width="7" height="15" rx="3" fill="#00d9f5"/>
+  </svg>
+</aside>
+<button class="crew-astronaut-reopen" id="showCrewAstronaut" type="button" aria-label="Show astronaut companion">👨‍🚀 <span>Hi, crew!</span></button>
+
+<!-- PLANT INSPECTION MODAL -->
+<div class="modal-overlay" id="plantModal">
+  <div class="modal-content">
+    <button class="modal-close-btn" onclick="Dashboard.closePlantModal()">✕</button>
+    <div id="plantModalBody">
+      <!-- Dynamically filled -->
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="js/charts.js"></script>
+<script src="js/dashboard.js?v=nutrition-monitor-2"></script>
+<script src="js/app.js?v=nutrition-monitor-2"></script>
+
+<script>
+  // Ensure image analysis triggers setup once DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    Dashboard.setupImageAnalysis();
+  });
+</script>
+
+</body>
+</html>
